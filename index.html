@@ -2,10 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player App</title>
+    <title>Music | Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="icon" type="image/x-icon" href="music-player/images/music-1.jpg">
 </head>
 <body>
-    
+    <div class="container">
+        <h2 class="login-title" id="form-title">Log in</h2>
+
+        <!-- Form -->
+        <form id="authentication" class="login-form">
+            <div>
+                <label for="username">Username</label>
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="JohnDoe@12"
+                    name="username"
+                    required
+                />
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    name="email"
+                    required
+                />
+            </div>
+ 
+            <div>
+                <label for="password">Password</label>
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    required
+                />
+            </div>
+
+            <button class="btn btn--form" type="submit" id="action-button">
+                Log in
+            </button>
+
+            <p id="toggle-link">New user? <span onclick="toggleForm()">Sign Up</span></p>
+        </form>
+    </div>
+
+    <script src="./assets/js/login.js"></script>
 </body>
 </html>
