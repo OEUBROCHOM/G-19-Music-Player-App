@@ -1,6 +1,5 @@
 // Track current form mode (login or signup)
 let isSignUpMode = false;
-
 // Toggle between Login and Sign-Up form
 function toggleForm() {
     const formTitle = document.getElementById("form-title");
@@ -69,7 +68,7 @@ function logIn(username, email, password) {
 
     if (user) {
         alert(`Welcome back, ${user.username}!`);
-        window.location.href = "Page/home.html"; // Redirect to home.html code
+        window.location.href = "home.html"; // Redirect to home.html code
     } else {
         alert("Incorrect username, email, or password!");
     }
