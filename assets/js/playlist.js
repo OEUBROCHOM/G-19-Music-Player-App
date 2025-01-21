@@ -215,29 +215,38 @@ document.addEventListener('click', (event) => {
   if (event.target && event.target.classList.contains('upload-song-btn')) {
     const playlistId = event.target.getAttribute('data-playlist-id');
     Swal.fire({
-      title: 'Upload New Song',
+      title: '<span style="color: green;">UPLOAD NEW SONG</span>',
       html: `
         <form id="uploadSongForm">
           <div class="mb-3">
-            <label for="songTitle" class="form-label">Song Title</label>
+            <label for="songTitle" style="color: gray;" text-align: left;" class="form-label">SONG TITLE</label>
             <input type="text" class="form-control" id="songTitle" placeholder="Enter song title" required>
           </div>
           <div class="mb-3">
-            <label for="songArtist" class="form-label">Artist</label>
+            <label for="songArtist" style="color: gray;" class="form-label">ARTIST</label>
             <input type="text" class="form-control" id="songArtist" placeholder="Enter artist name" required>
           </div>
           <div class="mb-3">
-            <label for="songImage" class="form-label">Upload Image</label>
+            <label for="songImage" style="color: gray;" class="form-label">UPLOAD IMAGE</label>
             <input type="file" class="form-control" id="songImage" accept="image/*" required>
           </div>
           <div class="mb-3">
-            <label for="songFile" class="form-label">Upload Song</label>
+            <label for="songFile" style="color: gray;" class="form-label">UPLOAD SONG</label>
             <input type="file" class="form-control" id="songFile" accept="audio/*" required>
           </div>
           <button type="submit" class="btn btn-primary">Add New Song</button>
         </form>
       `,
       showConfirmButton: false,
+
+      didOpen: () => {
+        // Select all labels inside the SweetAlert content
+        const labels = document.querySelectorAll('#uploadSongForm label');
+        labels.forEach((label) => {
+          label.style.display = 'block'; // Makes each label block-level
+          label.style.textAlign = 'left'; // Aligns text to the left
+        });
+      },
     });
 
     // Handle form submission
