@@ -1,0 +1,232 @@
+/* song page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    color: white;
+    display: flex;
+    height: 100vh;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: #1e1e1e;
+    width: 150px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .menu-icon:hover {
+    background-color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  li a {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  li a:hover {
+    background-color: #333;
+  }
+  
+  /* Hidden menu items */
+  .hidden {
+    display: none;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #search {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .categories button {
+    background-color: #3c3c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .categories button:hover {
+    background-color: #505050;
+  }
+  
+  .song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .song {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .song div {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .song h3 {
+    margin: 0;
+  }
+  
+  .song p {
+    margin: 5px 0 0;
+    color: #bbbbbb;
+  }
+  
+  .song img{
+    height: 100px;
+    border-radius: 10px;
+  }
+  
+  .plays-button {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .plays-button:hover {
+    background-color: #1ed760;
+  }
+
+  
+
+  @media (min-width: 481px) and (max-width: 1024px) {
+    /* Header Section */
+    header {
+        height: 70vh; /* Adjust header height for tablets */
+        padding: 20px;
+    }
+  
+    .typewriter {
+        font-size: 2rem; /* Moderate font size for better readability */
+        margin-bottom: 1rem;
+    }
+  
+    p {
+        font-size: 1.1rem; /* Slightly larger paragraph font */
+    }
+  
+    .btn-container a {
+        padding: 8px 15px; /* Slightly larger buttons */
+        font-size: 14px;
+        margin: 5px 10px; /* Add space between buttons */
+    }
+  
+    /* Music Cards */
+    .Cards {
+        flex-wrap: wrap; /* Wrap cards for a grid-like structure */
+        justify-content: center;
+        gap: 15px;
+    }
+  
+    .music-player {
+        width: 45%; /* Half-width cards for tablets */
+        padding: 20px;
+    }
+  
+    /* Sung Section */
+    .sung {
+        flex-direction: row; /* Horizontal alignment */
+        padding: 15px;
+    }
+  
+    .sung img {
+        width: 70px; /* Larger image for tablets */
+        height: 70px;
+        margin-right: 10px;
+    }
+  
+    .sung-info h3 {
+        font-size: 16px;
+    }
+  
+    .sung-info p {
+        font-size: 14px;
+    }
+  
+    /* Modal Section */
+    .modal-content {
+        width: 70%; /* Adjust modal width for tablets */
+        padding: 20px;
+    }
+  
+    /* General Adjustments */
+    body {
+        font-size: 16px; /* Slightly larger base font size */
+    }
+  
+    .sign a {
+        padding: 6px 12px; /* Adjust sign-in button */
+        font-size: 14px;
+    }
+  
+    .sign-in-form {
+        margin: 15px; /* Moderate margins */
+        padding: 15px; /* Moderate padding */
+    }
+  }
