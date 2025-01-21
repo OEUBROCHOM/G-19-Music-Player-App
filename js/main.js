@@ -120,7 +120,7 @@ function showSignInAlert() {
   signInButton.style.borderRadius = '5px';
   signInButton.style.cursor = 'pointer';
   signInButton.addEventListener('click', () => {
-      window.location.href = '../longin.html'; // Redirect to login.html
+      window.location.href = '../login.html'; // Redirect to login.html
   });
 
   // Create "Cancel" button
