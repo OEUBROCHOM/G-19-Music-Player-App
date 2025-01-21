@@ -29,6 +29,8 @@
  
   body {
     background-image: url(./Music-player/images/music-10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: sans-serif;
     line-height: 1.4;
     display: flex;
@@ -36,7 +38,7 @@
   }
   
   .container {
-    margin-top: 10%;
+    margin-top: 5%;
     width: 400px;
     padding: 36px 48px 48px 48px;
     background-color: black;
