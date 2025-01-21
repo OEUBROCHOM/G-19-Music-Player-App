@@ -69,7 +69,7 @@ function logIn(username, email, password) {
 
     if (user) {
         alert(`Welcome back, ${user.username}!`);
-        window.location.href = "../Page/home.html"; // Redirect to home.html
+        window.location.href = "../Page/home.html"; // Redirect to home.html s
     } else {
         alert("Incorrect username, email, or password!");
     }
