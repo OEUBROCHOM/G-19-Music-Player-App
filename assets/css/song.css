@@ -536,6 +536,7 @@ img {
   grid-template-columns: repeat(3, 1fr);  
   grid-template-rows: 1fr;
   margin: 0px 5rem;
+  padding: 35px;
 }
 
 .cards {
@@ -544,9 +545,9 @@ img {
   border: var(--border);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  padding: 10px;
+  padding: 20px;
   margin-left: 2rem;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .cards:hover {
