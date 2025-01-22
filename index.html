@@ -20,7 +20,7 @@
       <p>Welcome to my music app.Music is the art of arranging sounds in a structured and harmonious way to produce <br> expressions of emotion, ideas, or storytelling.</p>
       <div class="btn-container">
           <!-- <a href="">Listen Now</a> -->
-          <button class="play-btn" onclick="showSignInAlert()">Listen Now</button>
+          <button class="play-btn" >Listen Now</button>
           <a href="login.html">Sign In</a>
       </div>
   </header>
@@ -97,6 +97,17 @@
         </div>
       </div>
 
+    <!-- For search songs -->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand">EXPLORE YOUR FAVORITE SONGS</a>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
       <!-- for sonng list below -->
     <section class="sungs">
         <div class="sung">
@@ -134,6 +145,107 @@
                   </div>
                   <button class="play-button" onclick="showSignInAlert()">Play</button>
             </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-1.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>Baby Mama</h3>
+                      <p>Vanda</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-6.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>ប្រពន្ធ​ កម្សត់</h3>
+                      <p>Tena</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-25.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>ចិត្តព្រៃផ្សៃ</h3>
+                      <p>PSV & VD</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-27.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>លួចស្នេហ៍​ លួចទុក្ខ</h3>
+                      <p>Sinsi Samuth</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-28.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>សង្សារ​ សម្លាញ់ចិត្ត</h3>
+                      <p>Sinsi Samuth</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="image/images (9)_enhanced.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>Kep Distand</h3>
+                      <p>SK</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-20.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>ផ្កាស្លា</h3>
+                      <p>All3rg</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="./Music-player/images/music-15.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>That should be me</h3>
+                      <p>Justin Bieber</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
+            <div class="sung">
+                <img src="image/images (9)_enhanced.jpg" alt="Artist 3">
+                  <div class="sung-info">
+                      <h3>Kep Distand</h3>
+                      <p>SK</p>
+                  </div>
+                  <button class="play-button" onclick="showSignInAlert()">Play</button>
+            </div>
     </section>
+
+    <!-- js here -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector('input[type="search"]');
+        const songs = document.querySelectorAll('.sung');
+  
+        searchInput.addEventListener('input', function () {
+          const searchValue = searchInput.value.toLowerCase();
+  
+          songs.forEach(song => {
+            const songTitle = song.querySelector('h3')?.textContent.toLowerCase();
+            const artistName = song.querySelector('p')?.textContent.toLowerCase();
+  
+            if (songTitle.includes(searchValue) || artistName.includes(searchValue)) {
+              song.style.visibility = 'visible'; // Make the song visible
+              song.style.position = 'relative';  // Keep its position in the layout
+            } else {
+              song.style.visibility = 'hidden'; // Hide the song visually
+              song.style.position = 'absolute'; // Remove it from the layout
+            }
+          });
+        });
+      });
+  
+      function showSignInAlert() {
+        alert("Please sign in to play the song!");
+      }
+    </script>
 </body>
 </html>
