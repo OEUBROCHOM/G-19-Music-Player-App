@@ -990,3 +990,213 @@ img {
   }
 }
 
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #333); /* Gradient background */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  width: 100%; 
+  margin-left: 10px !important;
+
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.01%);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* Equal Spacing for Sections */
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: space-between; 
+}
+
+.footer .col-md-3 {
+  flex: 1; 
+  min-width: 200px; 
+  margin-bottom: 20px;
+}
+
+/* Newsletter Section */
+.footer .newsletter-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer .newsletter-form h5 {
+  font-size: 1.25rem; 
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer .newsletter-form p {
+  font-size: 0.9rem; 
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px; 
+}
+
+.footer .newsletter-form .input-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.footer .newsletter-form .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  flex: 1; 
+  font-size: 0.95rem; 
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .newsletter-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6); 
+}
+
+.footer .newsletter-form .btn-submit {
+  background: #ff6b6b; 
+  color: #fff;
+  border: none;
+  padding: 12px 20px; 
+  font-size: 0.95rem;
+  font-weight: 600; 
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.footer .newsletter-form .btn-submit:hover {
+  background: #ff4c4c; 
+  transform: translateY(-2px); 
+}
+
+.footer .newsletter-form .btn-submit:active {
+  transform: translateY(0);
+} 
+/* Quick Links Section */
+.footer .list-unstyled {
+  padding: 0;
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 8px;
+}
+
+.footer .list-unstyled a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer .list-unstyled a:hover {
+  color: #ff6b6b;
+  transform: translateX(5px);
+}
+
+.footer .list-unstyled .material-icons {
+  font-size: 1rem;
+  margin-right: 8px; 
+  transition: transform 0.3s ease;
+}
+
+/* Social Media Section */
+.footer .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+.footer .social-links .fab {
+  font-size: 1rem;
+  margin-right: 8px; 
+}
+
+/* Contact Info Section */
+.footer .contact-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer .contact-info h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .contact-info ul li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.footer .contact-info ul li .material-icons {
+  font-size: 1rem;
+  color: #ff6b6b;
+}
+
+/* Divider */
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 20px 0; 
+}
+
+/* Copyright Section */
+.footer .copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 15px; 
+}
+

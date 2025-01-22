@@ -130,3 +130,39 @@ carousel.addEventListener("touchmove", dragging);
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
 
+//function to handle the sweet alert in the sibmit button
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        console.log('Form submitted!'); // Check if this message appears in the console
+
+        // Get the email input value
+        const email = document.getElementById('emailInput').value;
+
+        // Validate the email (simple check)
+        if (email && email.includes('@')) {
+            // Show SweetAlert2 success message
+            Swal.fire({
+                title: 'Success!',
+                text: 'You have successfully subscribed to our newsletter.',
+                icon: 'success',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#ff6b6b', // Match your button color
+            }).then(() => {
+                // Clear the input field after submission
+                document.getElementById('emailInput').value = '';
+            });
+        } else {
+            // Show SweetAlert2 error message for invalid email
+            Swal.fire({
+                title: 'Error!',
+                text: 'Please enter a valid email address.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#ff6b6b', // Match your button color
+            });
+        }
+    });
+});
+
+
