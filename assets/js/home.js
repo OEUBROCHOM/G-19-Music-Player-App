@@ -165,4 +165,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//Handle Placeholder Change
+function updatePlaceholder() {
+    const input = document.getElementById('emailInput');
+    const isMobile = window.innerWidth <= 767.98; // Check if screen is tablet or smartphone
 
+    // Update placeholder based on screen size
+    if (isMobile) {
+        input.placeholder = input.getAttribute('data-placeholder-mobile');
+    } else {
+        input.placeholder = input.getAttribute('data-placeholder-desktop');
+    }
+}
+
+// Run on page load
+updatePlaceholder();
+
+// Run on window resize
+window.addEventListener('resize', updatePlaceholder);

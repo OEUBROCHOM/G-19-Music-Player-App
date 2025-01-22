@@ -1200,3 +1200,51 @@ img {
   margin-top: 15px; 
 }
 
+/* Footer Responsive Styles */
+@media (max-width: 767.98px) {
+  .footer {
+      padding: 20px 0; /* Reduce padding for smaller screens */
+  }
+
+  .footer h5 {
+      font-size: 1.1rem; /* Smaller headings */
+  }
+
+  .footer p {
+      font-size: 0.9rem; /* Smaller text */
+  }
+
+  .footer .input-group {
+      flex-direction: column; /* Stack input and button vertically */
+      width: 100%; /* Full width container */
+  }
+
+  .footer .input-group .form-control {
+      border-radius: 10px; /* Add border radius to input */
+      margin-bottom: 10px; /* Add space between input and button */
+      width: 100%; /* Full width input */
+  }
+
+  .footer .input-group .btn-submit {
+      border-radius: 10px; /* Add border radius to button */
+      width: 100%; /* Full width button */
+  }
+
+  .footer .social-links {
+      align-items: center; /* Center align social links */
+  }
+
+  .footer .list-unstyled li {
+      justify-content: center; /* Center align list items */
+  }
+}
+.text-popular{
+  width: 90%;
+  height: 10vh;
+}
+.sec-text {
+  /* width: 100% !important; */
+  text-align: center;
+  font-size: 1.5rem;
+
+}
