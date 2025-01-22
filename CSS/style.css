@@ -30,10 +30,10 @@ body, html {
 
 
 header {
-    background-image: url('../image/image 43.png');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+    background-image: url('../image/bgindex.jpg');
+    /* background-size: cover; */
+    /* background-position: center top; */
+    /* background-repeat: no-repeat; */
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -77,7 +77,9 @@ p {
     background-color: white;
 }
 
+/* for cards content */
 .Cards{
+    background-color: rgb(25, 17, 17);
     display: flex;
     justify-content: center;
 }
@@ -151,11 +153,17 @@ p {
     width: 80%;
   }
 
+  /* for songs list */
+.sungs{
+    padding-top: 1%;
+    background-color: rgb(104, 101, 85);
+}
+
 .sung {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: rgb(115, 108, 108);
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 10px;
