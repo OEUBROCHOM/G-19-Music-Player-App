@@ -50,7 +50,7 @@ body {
   color: var(--white);
 
    /* Animation */
-   animation: slideInFromRight 1.5s ease-out;
+   animation: slideInFromRight 0.5s ease-out;
 }
 /* Keyframes for the animation */
 @keyframes slideInFromRight {
