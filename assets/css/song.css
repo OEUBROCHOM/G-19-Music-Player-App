@@ -530,10 +530,9 @@ img {
 }
 
 /* ========== SONGS PAGE ==========*/
-
 .ui-cards {
-  display: grid;  
-  grid-template-columns: repeat(3, 1fr);  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   margin: 0px 5rem;
   padding: 35px;
@@ -547,7 +546,8 @@ img {
   border-radius: var(--border-radius);
   padding: 20px;
   margin-left: 2rem;
-  margin-top: 50px;
+  margin-top: 15px;
+  display: block;
 }
 
 .cards:hover {
@@ -576,7 +576,7 @@ img {
   height: 300px;
   display: block;
   border-radius: 50px 50px 0px 0px;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .songs-title {
@@ -607,6 +607,45 @@ img {
   font-size: 1.3rem;
   cursor: pointer;
 }
+
+.form-inline {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.form-control {
+  width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #eca90b;
+  border-radius: 50px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  background-color: #eca90b;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: #ff9800;
+}
+
 
 @media (max-width: 970px) {
   .ui-cards {
@@ -827,3 +866,48 @@ td, th {
   background-color: #185ADB;
 };
 
+
+
+/* Style the form */
+.form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+
+}
+
+
+.form-control {
+  border-radius: 30px; 
+  padding: 15px 15px; 
+  border: 1px solid #ced4da; 
+  font-size: 16px; 
+  flex-grow: 1; /* Allow it to expand */
+  margin-top: 30px;
+  margin-left: 120vh;
+  width: 33%;
+  
+}
+
+/* Add focus effect */
+.form-control:focus {
+  border-color: gray; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); 
+
+}
+
+
+.btn-outline-success {
+  border-radius: 30px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; 
+  border: none;
+}
+
+.btn-outline-success:hover {
+  background-color: blue; 
+  color: white; 
+}
