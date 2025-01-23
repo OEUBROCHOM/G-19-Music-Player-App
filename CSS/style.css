@@ -41,6 +41,18 @@ header {
     align-items: center;
     text-align: center;
     color: white;
+
+    animation: backgroundZoom 15s ease-out forwards;
+}
+@keyframes backgroundZoom {
+    0% {
+        background-size: 120%; /* Start slightly zoomed-in */
+        /* opacity: 0; */
+    }
+    100% {
+        background-size: 100%; /* Normal size at the end */
+        /* opacity: 1; */
+    }
 }
 
 .typewriter {
