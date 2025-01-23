@@ -31,9 +31,9 @@ body, html {
 
 header {
     background-image: url('../image/bgindex.jpg');
-    /* background-size: cover; */
-    /* background-position: center top; */
-    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -41,6 +41,18 @@ header {
     align-items: center;
     text-align: center;
     color: white;
+
+    animation: backgroundZoom 15s ease-out forwards;
+}
+@keyframes backgroundZoom {
+    0% {
+        background-size: 120%; /* Start slightly zoomed-in */
+        /* opacity: 0; */
+    }
+    100% {
+        background-size: 100%; /* Normal size at the end */
+        /* opacity: 1; */
+    }
 }
 
 .typewriter {
@@ -153,18 +165,47 @@ p {
     width: 80%;
   }
 
+  /* For search songs */
+  .bg-body-tertiary{
+    width: 100%;
+    background-color: #2c2828;
+    
+  }
+
   /* for songs list */
 .sungs{
     padding-top: 1%;
-    background-color: rgb(104, 101, 85);
+    background-image: url(../image/spinning-grooved-disk-on-old-fashioned-turntable-free-photo_upscaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 50vh; /* Sets the height to 20% of the viewport height */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    scrollbar-width: none; /* Hides scrollbar (for Firefox) */
+    -ms-overflow-style: none; /* Hides scrollbar on Internet Explorer */
+}
+.sungs::-webkit-scrollbar {
+    display: none; /* Hides scrollbar (for Webkit browsers like Chrome, Edge, and Safari) */
+}
+.sungs::-webkit-scrollbar {
+    width: 8px; /* Adjusts scrollbar width for Webkit browsers */
+}
+
+.sungs::-webkit-scrollbar-thumb {
+    background: #aaa; /* Adjust scrollbar color */
+    border-radius: 10px; /* Makes the scrollbar thumb rounded */
+}
+
+.sungs::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Darker color when hovered */
 }
 
 .sung {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(115, 108, 108);
-    border: 1px solid #ddd;
+    background-color: rgb(39, 25, 25);
+    border: 1px solid rgb(176, 163, 90);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -192,7 +233,7 @@ p {
 .sung-info h3 {
     margin: 0;
     font-size: 18px;
-    color: black;
+    color: white;
 }
 
 .sung-info p {
