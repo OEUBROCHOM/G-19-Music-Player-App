@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="../assets/css/song.css">
-
+        <script src="../js/song.js" defer></script>
         <title>Music | Song List</title>
         <link rel="icon" type="image/x-icon" href="music-player/images/favicon.ico">
     </head>
@@ -52,10 +52,15 @@
                     </div>
                 </div>
             </nav>
+
         </div>
 
         <!-- CONTENTS -->
         <main>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
             <section class="ui-cards">
                 <div class="cards">
                     <div class="pics">
@@ -172,6 +177,25 @@
         </main>
 
         <!-- MAIN JS -->
-        <script src="assets/js/main.js"></script>
+         <script>
+            const searchInput = document.querySelector('.form-control');
+            const cards = document.querySelectorAll('.cards');
+    
+            searchInput.addEventListener('input', () => {
+                const searchValue = searchInput.value.toLowerCase();
+    
+                cards.forEach((card) => {
+                    const title = card.querySelector('.songs-title').textContent.toLowerCase();
+                    const text = card.querySelector('.songs-text').textContent.toLowerCase();
+    
+                    if (title.includes(searchValue) || text.includes(searchValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+         </script>
+         <script src="../js/song.js"></script>
     </body>
 </html>
