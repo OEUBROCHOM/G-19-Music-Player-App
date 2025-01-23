@@ -110,7 +110,7 @@ body {
 .popular-artists {
   display: flex;
   gap: 20px;
-  animation: slideArtists 10s linear infinite;
+  animation: slideArtists 8s linear infinite;
   width: max-content; /* Ensures it adapts to content size */
 }
 
