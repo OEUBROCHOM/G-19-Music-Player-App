@@ -968,6 +968,9 @@ img {
     opacity: 0;
     transition: .3s;
   }
+  .nav__subtitle{
+    font-weight: bold;
+  }
   
   
   /* Navbar expanded */
