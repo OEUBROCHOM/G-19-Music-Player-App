@@ -30,9 +30,8 @@ body, html {
 
 
 header {
-    background-image: url('../image/bgindex.jpg');
+    background-image: url('../image/indpag.png');
     background-size: cover;
-    background-position: center top;
     background-repeat: no-repeat;
     height: 80vh;
     display: flex;
