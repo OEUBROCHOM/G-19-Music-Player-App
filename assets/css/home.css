@@ -989,6 +989,31 @@ img {
     opacity: 1;
   }
 }
+.loogo {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  background-color: #3498db; /* Example background color */
+  border-radius: 50%; /* Makes it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  animation: flipAnimation 10s infinite linear; /* Animation applied */
+}
+
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(1000px) rotateY(0deg); /* Starting position */
+  }
+  50% {
+    transform: perspective(1000px) rotateY(180deg); /* Half flip */
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg); /* Full flip */
+  }
+}
+
 
 /* Footer Styles */
 .footer {
