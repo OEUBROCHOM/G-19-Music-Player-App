@@ -97,14 +97,37 @@ p {
 
 .music-player {
     margin: 30px;
-    background-color: #2c2c54;
+    background-color: rgb(43, 40, 24);
     border-radius: 10px;
     padding: 20px;
     width: 300px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.2s, box-shadow 0.2s;
+    opacity: 0; /* Start with element invisible */
+    transform: translateY(30px); /* Start the element off-screen (down) */
+    animation: slide-up 2s forwards; /* Apply the animation */
 }
+
+/* Define the animation */
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Element starts from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Element comes into normal position */
+    }
+}
+.sungs {
+    padding: 15px;
+    background-color: rgb(34, 34, 34);
+    opacity: 0; /* Start with element invisible */
+    transform: translateY(30px); /* Start the element off-screen (down) */
+    animation: slide-up 1s forwards; /* Apply the animation */
+}
+
 .music-player:hover{
     transform: scale(1.05);
 }
@@ -165,10 +188,17 @@ p {
   }
 
   /* For search songs */
-  .bg-body-tertiary{
+  .for-searchs{
     width: 100%;
-    background-color: #2c2828;
+    background-color: #2c2828 !important;
     
+  }
+  .navbar-brand{
+    color: gold !important;
+    font-weight: bold;
+  }
+  .me-2{
+    background-color: goldenrod !important;
   }
 
   /* for songs list */
@@ -394,3 +424,27 @@ p {
   }
 }
 
+/* footer */
+.bg-gray-800{
+    height: 30vh !important;
+} 
+.fab{
+    color: gold;
+    font-size: 2rem;
+}
+.fa-facebook-f:hover,.fa-twitter:hover, .fa-telegram:hover{
+    color: white;
+}
+.fa-linkedin-in:hover,.fa-github:hover,.fa-tiktok:hover{
+    color: white;
+}
+.fa-youtube:hover{
+    color: red;
+}
+.text-center{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
