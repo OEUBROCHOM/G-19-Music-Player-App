@@ -354,3 +354,13 @@ function setVolume(volume) {
   const audioPlayer = document.getElementById('audioPlayer');
   audioPlayer.volume = volume;
 }
+
+
+
+// Toggle sidebar for smartphones
+const headerToggle = document.getElementById('header-toggle');
+const nav = document.getElementById('navbar'); // Ensure your navbar has an ID of "navbar"
+
+headerToggle.addEventListener('click', () => {
+  nav.classList.toggle('show-menu'); // Toggle the "show-menu" class
+});

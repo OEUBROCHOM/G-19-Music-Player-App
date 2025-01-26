@@ -183,3 +183,84 @@ updatePlaceholder();
 
 // Run on window resize
 window.addEventListener('resize', updatePlaceholder);
+
+
+// Voice Control JavaScript
+const voiceControlBtn = document.getElementById('voice-control-btn');
+
+// Check if the browser supports the Web Speech API
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    // Configure the recognition settings
+    recognition.continuous = false; // Stop after one command
+    recognition.interimResults = false; // Only final results
+    recognition.lang = 'en-US'; // Set language
+
+    // Start recognition when the button is clicked
+    voiceControlBtn.addEventListener('click', () => {
+        recognition.start();
+        voiceControlBtn.innerHTML = '<i class="fas fa-microphone"></i> Listening...'; // Change button text
+    });
+
+    // Handle the result event
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript.toLowerCase(); // Get the recognized text
+        voiceControlBtn.innerHTML = '<i class="fas fa-microphone"></i>'; // Reset button text
+
+        // Control the music player based on the recognized command
+        if (transcript.includes('play')) {
+            playSong(); // Call your play function
+        } else if (transcript.includes('pause')) {
+            pauseSong(); // Call your pause function
+        } else if (transcript.includes('next')) {
+            nextSong(); // Call your next function
+        } else if (transcript.includes('previous')) {
+            previousSong(); // Call your previous function
+        } else {
+            alert('Command not recognized. Please say "play", "pause", "next", or "previous".');
+        }
+    };
+
+    // Handle errors
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        voiceControlBtn.innerHTML = '<i class="fas fa-microphone"></i>'; // Reset button text
+        alert('Error: ' + event.error);
+    };
+
+    // Stop recognition when the user stops speaking
+    recognition.onspeechend = () => {
+        recognition.stop();
+        voiceControlBtn.innerHTML = '<i class="fas fa-microphone"></i>'; // Reset button text
+    };
+} else {
+    // Browser does not support the Web Speech API
+    voiceControlBtn.style.display = 'none'; // Hide the button
+    alert('Your browser does not support voice control.');
+}
+
+// Define music control functions
+function playSong() {
+    // Logic to play the song
+    const audio = document.querySelector('.audio'); // Adjust selector as needed
+    audio.play();
+    console.log('Playing song...');
+}
+
+function pauseSong() {
+    // Logic to pause the song
+    const audio = document.querySelector('.audio'); // Adjust selector as needed
+    audio.pause();
+    console.log('Pausing song...');
+}
+
+function nextSong() {
+    // Logic to play the next song
+    console.log('Playing next song...');
+}
+
+function previousSong() {
+    // Logic to play the previous song
+    console.log('Playing previous song...');
+}
