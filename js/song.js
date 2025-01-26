@@ -11,3 +11,23 @@ function handleLoginFormSubmit(event) {
   
   const loginForm = document.getElementById('login-form');
   loginForm.addEventListener('submit', handleLoginFormSubmit);
+
+
+// song
+// const searchInput = document.querySelector('.form-control');
+//             const cards = document.querySelectorAll('.cards');
+    
+//             searchInput.addEventListener('input', () => {
+//                 const searchValue = searchInput.value.toLowerCase();
+    
+//                 cards.forEach((card) => {
+//                     const title = card.querySelector('.songs-title').textContent.toLowerCase();
+//                     const text = card.querySelector('.songs-text').textContent.toLowerCase();
+    
+//                     if (title.includes(searchValue) || text.includes(searchValue)) {
+//                         card.style.display = 'block';
+//                     } else {
+//                         card.style.display = 'none';
+//                     }
+//                 });
+//             });
