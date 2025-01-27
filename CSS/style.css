@@ -74,6 +74,9 @@ p {
     position: relative;
 }
 
+.btn-container{
+    margin-top: 20px;
+}
 .btn-container a {
     text-decoration: none;
     color: white;
@@ -426,11 +429,11 @@ p {
 
 /* footer */
 .bg-gray-800{
-    height: 30vh !important;
+    height: 35vh !important;
 } 
 .fab{
     color: gold;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .fa-facebook-f:hover,.fa-twitter:hover, .fa-telegram:hover{
     color: white;
@@ -447,4 +450,22 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.text-gray-300{
+    font-family: 'Times New Roman', Times, serif;
+}
+.flex-col{
+    padding: 10px;
+}
+.flex-co img{
+    border: none !important;
+}
+.flex-col a{
+    text-decoration: none;
+    color: white;
+}
+.mt-0{
+    font-size: 0.8rem;
+    color: gray;
+    margin-bottom: 2rem;
 }
