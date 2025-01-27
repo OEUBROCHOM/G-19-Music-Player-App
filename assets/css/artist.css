@@ -65,12 +65,26 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--black);
-  background-image: url(../img/pop.jpg);
+  background-image: url(/image/artistbg.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+  animation: zoomInOut 15s ease-in-out infinite; /* Apply the animation */
   
 }
+@keyframes zoomInOut {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 110% 110%; /* Zoom in */
+  }
+  100% {
+    background-size: 100% 100%; /* Zoom out */
+  }
+}
+
 
 h3 {
   margin: 0;

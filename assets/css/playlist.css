@@ -65,10 +65,21 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--black);
-  background-image: url(../img/pop.jpg);
+  background-image: url(/image/indx.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  animation: zoomInOut 6s ease-in-out infinite; /* Apply the animation */
+}
+@keyframes zoomInOut {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 110% 110%; /* Zoom in */
+  }
+  100% {
+    background-size: 100% 100%; /* Zoom out */
+  }
 }
 
 h3 {
@@ -502,7 +513,7 @@ img {
 
 .cards {
   box-sizing: border-box;
-  background-color: var(--white);
+  background-color: whitesmoke;
   border: var(--border);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
