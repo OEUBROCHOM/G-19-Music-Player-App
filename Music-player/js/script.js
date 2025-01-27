@@ -232,3 +232,71 @@ function clicked(element){
   playMusic();
   playingSong();
 }
+
+
+
+// Reference the mic icon
+const micIcon = wrapper.querySelector(".material-icons[title='Voice Command']");
+micIcon.innerText = "mic";
+micIcon.setAttribute("title", "Voice Command");
+
+// Check for browser compatibility and initialize Speech Recognition
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+  alert("Sorry, your browser does not support Speech Recognition.");
+} else {
+  const recognition = new SpeechRecognition();
+
+  // Set recognition properties
+  recognition.lang = "en-US"; // English language
+  recognition.interimResults = false; // No interim results, only final
+  recognition.continuous = false; // Listen for a single command
+
+  // Event: When the mic icon is clicked
+  micIcon.addEventListener("click", () => {
+    recognition.start(); // Start listening
+    alert("Listening for voice commands. Say something like 'Play', 'Stop', 'Next song', 'Previous song', or 'Play Vanda'.");
+  });
+
+  // Event: When recognition hears a command
+  recognition.addEventListener("result", (event) => {
+    const userCommand = event.results[0][0].transcript.toLowerCase();
+    console.log(`Voice Command: ${userCommand}`); // Log the command for debugging
+
+    if (userCommand.includes("play") && userCommand.includes("vanda")) {
+      // Filter songs by the artist "Vanda"
+      const vandaSongs = allMusic.filter((music) => music.artist.toLowerCase() === "vanda");
+
+      if (vandaSongs.length > 0) {
+        musicIndex = allMusic.findIndex((music) => music.name === vandaSongs[0].name) + 1; // Find index of the first song by Vanda
+        loadMusic(musicIndex); // Load the first song by Vanda
+        playMusic(); // Play the song
+        playingSong(); // Update the UI to reflect the playing song
+      } else {
+        alert("No songs by 'Vanda' found.");
+      }
+    } else if (userCommand.includes("play")) {
+      playMusic(); // Play the song
+    } else if (userCommand.includes("stop")) {
+      pauseMusic(); // Pause the song
+    } else if (userCommand.includes("next song")) {
+      nextMusic(); // Go to the next song
+    } else if (userCommand.includes("previous song")) {
+      prevMusic(); // Go to the previous song
+    } else {
+      alert(`Unknown command: ${userCommand}`);
+    }
+  });
+
+  // Event: Handle recognition errors
+  recognition.addEventListener("error", (event) => {
+    console.error("Speech recognition error:", event.error);
+    alert("Sorry, there was a problem with speech recognition. Please try again.");
+  });
+
+  // Event: Stop recognition when done
+  recognition.addEventListener("end", () => {
+    console.log("Speech recognition stopped.");
+  });
+}
