@@ -43,8 +43,13 @@ function signUp(username, email, password) {
     const existingUser = users.find(user => user.email === email);
 
     if (existingUser) {
-        alert("Email is already registered. Please log in.");
-        toggleForm();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email is already registered. Please log in.',
+          }).then(() => {
+            toggleForm(); 
+          });
         return;
     }
 
@@ -52,8 +57,15 @@ function signUp(username, email, password) {
     users.push({ username, email, password });
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Sign-Up successful! You can now log in.");
-    toggleForm();
+    Swal.fire({
+        title: "Sign-Up Successful!",
+        text: "You can now log in.",
+        icon: "success",
+        confirmButtonText: "OK"
+      }).then(() => {
+        toggleForm(); 
+      });
+      
 }
 
 // Log-In Function
@@ -67,9 +79,20 @@ function logIn(username, email, password) {
     );
 
     if (user) {
-        alert(`Welcome back, ${user.username}!`);
+        Swal.fire({
+            title: "Welcome Back!",
+            text: `Welcome back, ${user.username}!`,
+            icon: "success",
+            confirmButtonText: "Thanks"
+          });
+          
         window.location.href = "home.html";
     } else {
-        alert("Incorrect username, email, or password!");
+        Swal.fire({
+            title: "Error",
+            text: "Incorrect username, email, or password!",
+            icon: "error",
+            confirmButtonText: "Try Again"
+          });
     }
 }u
