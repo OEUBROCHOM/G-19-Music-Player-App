@@ -635,7 +635,9 @@ img {
     align-items: flex-start;
     gap: 10px;
   }
-
+  .sec-text{
+    font-size: 16px !important;
+  }
   .you-may-also-like .header-song h3 {
     font-size: 1.2rem;
   }
